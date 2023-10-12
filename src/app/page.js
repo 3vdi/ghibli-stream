@@ -26,5 +26,6 @@ export default function Page() {
 
   // User is signed in, render the "Home" component
   return <Home />;
+  
 }
 
