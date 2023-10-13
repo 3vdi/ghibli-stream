@@ -1,6 +1,7 @@
 // // pages/index.js (or any other Next.js component)
 import { useEffect, useState } from 'react';
 import MovieCard from './MovieCard';
+import Navbar from './Navbar';
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -14,12 +15,12 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Ghibli Movies</h1>
-      <ul>
+      <Navbar />
+      <div class="grid justify-items-center grid-cols-2 md:grid-cols-4 grid-rows-3">
         {movies.map((movie) => (
-          <li key={movie._id}>{movie.title}</li>
+          <MovieCard key={movie.id} movie={movie} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

@@ -1,12 +1,14 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
+import Navbar from "./Navbar";
 
 export default function Main() {
     const router = useRouter();
 
     return (
         <div>
+            <Navbar />
             <div className="... flex justify-center items-center text-8xl">
                 <h1>Ghibli-Stream</h1>
             </div>
