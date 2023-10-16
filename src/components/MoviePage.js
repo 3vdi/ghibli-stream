@@ -1,12 +1,11 @@
-import MovieCard from "./MovieCard";
-import moviesData from "../../../sample.json"
 
-export default function MoviePage(){
-    return(
-        <div>
-        {moviesData.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </div>
-    )
+export default function MoviePage({ movie }) {
+
+  return (
+    <div>
+      <h1>{movie.title}</h1>
+      <p>{movie.description}</p>
+      <h3>{movie.rt_score}</h3>
+    </div>
+  );
 }
