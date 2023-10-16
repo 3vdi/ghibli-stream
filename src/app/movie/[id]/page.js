@@ -20,9 +20,7 @@ const MovieDetailPage = ({params}) => {
 
   return (
     <div>
-      <h1>Movie Detail Page</h1>
       {movie ? (
-        
         <MoviePage key={movie.id} movie={movie} />
       ) : (
         <p>Loading...</p>
