@@ -2,24 +2,59 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import Navbar from "./Navbar";
+import MarqueePage from "./Marquee";
+
+import { useState, useCallback, useEffect } from 'react';
+
+const useMediaQuery = (width) => {
+    const [targetReached, setTargetReached] = useState(false);
+
+    const updateTarget = useCallback((e) => {
+        if (e.matches) {
+            setTargetReached(true);
+        } else {
+            setTargetReached(false);
+        }
+    }, []);
+
+    useEffect(() => {
+        const media = window.matchMedia(`(max-width: ${width}px)`);
+        media.addListener(updateTarget);
+
+        if (media.matches) {
+            setTargetReached(true);
+        }
+
+        return () => media.removeListener(updateTarget);
+    }, []);
+
+    return targetReached;
+};
 
 export default function Main() {
     const router = useRouter();
+    const isBreakpoint = useMediaQuery(1000)
 
     return (
-        <div>
-            <Navbar />
-            <div className="... flex justify-center items-center text-8xl">
-                <h1>Ghibli-Stream</h1>
+        <div class=" relative h-full  ">
+            <div class="w-full flex justify-center">
             </div>
-            <div className="... flex justify-center items-center m-8">
-                <img src="https://cdn.dribbble.com/users/47000/screenshots/1472080/pavlov_ghibli_mashup_dribbbs.jpg?resize=768x576&vertical=center" 
-                    width={'400vw'} alt="ghibli" />
+            <div class="z-10 absolute w-full  h-60 bg-gradient-to-b from-black   ">
+                <Navbar />
             </div>
-            <div className="... flex justify-center text-3xl mb-10" onClick={() => router.push('/login')}>
-                <button type="button" class="text-gray-900 bg-gradient-to-r from-red-200 via-blue-200 to-yellow-200
-                    hover:bg-gradient-to-bl
-                    text-lg px-5 py-2.5 text-center mr-2 mb-2">start watching</button>
+            <div class="z-10 h-60 bg-gradient-to-t absolute from-black text-white bottom-0 w-full"></div>
+            <div class="-z-10 flex w-full object-fit">
+
+                {isBreakpoint ? (
+                    <div>
+                        <MarqueePage />
+                    </div>
+                ) : (
+                    <div>
+                        <img class="flex w-screen h-screen object-fit" src="https://i.gifer.com/Py0.gif" />
+                    </div>
+                )}
+
             </div>
         </div>
     )
