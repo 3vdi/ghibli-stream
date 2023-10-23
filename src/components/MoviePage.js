@@ -24,7 +24,7 @@ export default function MoviePage({ movie }) {
   return (
     <div>
       <div class="absolute w-full z-0 h-60 bg-gradient-to-b from-black">
-      <img class="backdrop-contrast-[150%] max-h-screen" src={movie.movie_banner} width={'100%'} alt="" />
+      <img class="w-screen h-screen backdrop-contrast-[150%]" src={movie.movie_banner} alt="" />
       </div>
 
       {/* <div className="absolute w-full z-10" style={{ height: `${bannerHeight}px` }}> */}
