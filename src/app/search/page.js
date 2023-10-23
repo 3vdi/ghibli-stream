@@ -10,7 +10,6 @@ const Home = () => {
   return (
     <div>
         <Navbar />
-      <h1>Studio Ghibli Film Search</h1>
       <SearchComponent onSearch={setSearchQuery} />
       <FilmList searchQuery={searchQuery} />
     </div>
