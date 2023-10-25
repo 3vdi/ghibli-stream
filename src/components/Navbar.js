@@ -11,7 +11,7 @@ export default function Navbar() {
     return (
         <div>
             <nav class="absolute w-full h-60 bg-gradient-to-b from-black">
-                <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+                <div class="flex flex-wrap justify-between items-center mx-auto max-w-full p-4">
                     <Link href="/" class="flex items-center">
                         <Image src='/ghibli_logo.svg' alt='logo' width={70} height={70} />
                     </Link>
@@ -33,7 +33,7 @@ export default function Navbar() {
 return (
     <div>
         <nav class="w-full bg-gradient-to-b from-black">
-            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-full p-4">
                 <Link href="/" class="flex items-center">
                     <Image src='/ghibli_logo.svg' alt='logo' width={70} height={70} />
                 </Link>

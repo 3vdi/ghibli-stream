@@ -9,7 +9,6 @@ export default function SearchComponent({ onSearch }) {
 
   return (
     <div>
-
         <div class="m-6">
             <div class="relative">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -28,14 +27,6 @@ export default function SearchComponent({ onSearch }) {
              dark:focus:ring-purple-800" onClick={handleSearch}>Search</button>
             </div>
             </div>
-
-      {/* <input
-        type="text"
-        placeholder="Search for films..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button> */}
     </div>
   );
 };
