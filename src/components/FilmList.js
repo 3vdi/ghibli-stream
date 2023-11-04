@@ -7,7 +7,7 @@ export default function FilmList ({ searchQuery }){
   useEffect(() => {
     if (searchQuery) {
       setLoading(true);
-      fetch(`https://ghibliapi.vercel.app/films?q=${searchQuery}`)
+      fetch(`/api/movie?q=${searchQuery}`)
         .then((response) => response.json())
         .then((data) => {
           setFilms(data);

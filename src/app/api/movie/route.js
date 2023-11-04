@@ -2,7 +2,10 @@ import { NextResponse } from "next/server";
 
 // Handles GET requests to /api
 export async function GET(req, res) {
-  // ...
+  // Check if the user is authenticated (you need to implement your authentication logic here)
+  // if (!req.session.user) {
+  //   return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  // }
   
   try {
     const response = await fetch('https://ghibliapi.vercel.app/films');
@@ -10,7 +13,7 @@ export async function GET(req, res) {
       throw new Error('Error fetching data');
     }
     const movies = await response.json();
-    return NextResponse.json({ movies });
+    return NextResponse.json(movies);
   } catch (error) {
     return NextResponse.json({ error: 'Unable to fetch movies' });
   }

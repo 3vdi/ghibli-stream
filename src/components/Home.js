@@ -7,7 +7,7 @@ export default function Home() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch('https://ghibliapi.vercel.app/films')
+    fetch('/api/movie')
       .then((response) => response.json())
       .then((data) => setMovies(data))
       .catch((error) => console.error('Error fetching data:', error));
@@ -24,4 +24,3 @@ export default function Home() {
     </div>
   );
 };
-
