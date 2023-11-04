@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession } from 'next-auth/react';
+import { useSession, getSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import FilmList from "@/components/FilmList";
@@ -10,12 +10,23 @@ import { useEffect, useState } from "react";
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const router = useRouter();
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
 
-  if (!session) {
-    // If the user is not authenticated, redirect to the login page
-    router.push('/login'); // Replace with the actual URL of your login page
-  }
+  useEffect(() => {
+    const checkSession = async () => {
+      const userSession = await getSession();
+      if (!userSession) {
+        router.push('/login'); // Redirect to the login page if no session is found
+      }
+    };
+
+    if (status === 'loading') {
+      // Wait for the session to load
+      return;
+    }
+
+    checkSession();
+  }, [status, router]);
 
   return (
     <div>

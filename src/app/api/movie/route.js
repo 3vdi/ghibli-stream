@@ -3,9 +3,6 @@ import { NextResponse } from "next/server";
 // Handles GET requests to /api
 export async function GET(req, res) {
   // Check if the user is authenticated (you need to implement your authentication logic here)
-  // if (!req.session.user) {
-  //   return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  // }
   
   try {
     const response = await fetch('https://ghibliapi.vercel.app/films');
