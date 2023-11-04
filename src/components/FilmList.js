@@ -50,9 +50,9 @@ export default function FilmList ({ searchQuery }){
         <p class="text-lg text-gray-900 dark:text-white md:text-3xl md:max-w-xl">{film.title}</p>
 
         <div class="flex items-center gap-x-4 text-base font-semibold mt-2">
-            <p class="text-white font-normal rounded-lg text-sm px-2 py-1 mr-2 mb-2 dark:bg-gray-900">{film.release_date}</p>
-            <p class="text-white font-normal rounded-lg text-sm px-2 py-1 mr-2 mb-2 dark:bg-gray-900">{film.running_time}min</p>
-            <p class="text-white font-normal rounded-lg text-sm px-2 py-1 mr-2 mb-2 dark:bg-gray-900">{film.director}</p>
+            <p class="text-white font-normal rounded-lg sm:text-xs md:text-sm px-2 py-1 mr-2 mb-2 dark:bg-gray-900">{film.release_date}</p>
+            <p class="text-white font-normal rounded-lg sm:text-xs md:text-sm px-2 py-1 mr-2 mb-2 dark:bg-gray-900">{film.running_time}min</p>
+            <p class="text-white font-normal rounded-lg sm:text-xs md:text-sm px-2 py-1 mr-2 mb-2 dark:bg-gray-900">{film.director}</p>
         
         </div>
         </div>
