@@ -43,7 +43,7 @@ export default function MoviePage({ movie }) {
     return (
       <div>
         <div class="w-full rounded-lg px-2 pt-3">
-          <Image class="w-full rounded-lg backdrop-contrast-[150%]" src={movie.movie_banner} width={3300} height={3300} alt="" />
+          <Image class="w-full rounded-lg backdrop-contrast-[150%]" src={movie.movie_banner} width={3300} height={3300} alt="banner" />
         </div>
 
         <div class="w-full">
@@ -59,7 +59,7 @@ export default function MoviePage({ movie }) {
               <h2 class="rounded-full backdrop-blur-[2px]">{minToHr(movie.running_time)}</h2>
               <div>&middot;</div>
               <div class="flex items-center gap-x-2">
-                <Image src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Rotten_Tomatoes.svg" width={18} height={18} />
+                <Image src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Rotten_Tomatoes.svg" width={18} height={18} alt="rt" />
                 <p>{movie.rt_score}</p>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function MoviePage({ movie }) {
     return (
       <div>
         <div class="absolute w-full z-0 h-60 bg-gradient-to-b from-black">
-          <Image class="w-screen h-screen backdrop-contrast-[150%]" src={movie.movie_banner} width={3300} height={3300} alt="" />
+          <Image class="w-screen h-screen backdrop-contrast-[150%]" src={movie.movie_banner} width={3300} height={3300} alt="banner" />
         </div>
 
         <div class="absolute w-full z-10 h-full bg-gradient-to-r from-black">
@@ -99,7 +99,7 @@ export default function MoviePage({ movie }) {
               <h2 class="rounded-full backdrop-blur-[2px]">{minToHr(movie.running_time)}</h2>
               <div>&middot;</div>
               <div class="flex items-center gap-x-2">
-                <Image src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Rotten_Tomatoes.svg" width={24} height={24} />
+                <Image src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Rotten_Tomatoes.svg" width={24} height={24} alt="rt" />
                 <p>{movie.rt_score}</p>
               </div>
             </div>

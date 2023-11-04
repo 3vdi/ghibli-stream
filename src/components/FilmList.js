@@ -40,7 +40,7 @@ export default function FilmList ({ searchQuery }){
   return (
     <ul>
       {films.map((film) => (
-        <div class="m-6">
+        <div key={film.id} class="m-6">
 
         <a href={`/movie/${film.id}`} class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow
         hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
