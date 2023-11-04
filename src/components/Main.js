@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import MarqueePage from "./Marquee";
 
 import { useState, useCallback, useEffect } from 'react';
+import Image from "next/image";
 
 const useMediaQuery = (width) => {
     const [targetReached, setTargetReached] = useState(false);
@@ -51,7 +52,7 @@ export default function Main() {
                     </div>
                 ) : (
                     <div>
-                        <img class="flex w-screen h-screen object-fit" src="https://i.gifer.com/Py0.gif" />
+                        <Image class="flex w-screen h-screen object-fit" src="https://i.gifer.com/Py0.gif" width={3300} height={3300} />
                     </div>
                 )}
 

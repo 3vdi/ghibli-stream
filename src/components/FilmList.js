@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 export default function FilmList ({ searchQuery }){
@@ -43,7 +44,7 @@ export default function FilmList ({ searchQuery }){
 
         <a href={`/movie/${film.id}`} class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow
         hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-        <img class="rounded-lg transition duration-300 ease-in-out hover:scale-105" src={film.image} width={'100px'} alt="" />
+        <Image class="rounded-lg transition duration-300 ease-in-out hover:scale-105" src={film.image} width={100} height={180} alt="" />
         <div class="flex flex-col justify-end leading-normal ml-2">
         <p class="text-lg text-gray-900 dark:text-white md:text-xl md:max-w-xl">{film.original_title}</p>
         <p class="text-lg text-gray-900 dark:text-white md:text-3xl md:max-w-xl">{film.title}</p>
