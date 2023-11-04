@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import MoviePage from '@/components/MoviePage';
+import Loader from '@/components/loader';
 
 const MovieDetailPage = ({params}) => {
   const router = useRouter();
@@ -23,7 +24,7 @@ const MovieDetailPage = ({params}) => {
       {movie ? (
         <MoviePage key={movie.id} movie={movie} />
       ) : (
-        <p>Loading...</p>
+        <Loader />
       )}
     </div>
   );
