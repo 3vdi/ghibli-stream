@@ -52,8 +52,8 @@ export default function Main() {
                     </div>
                 ) : (
                     <div>
-                        <Image class="flex w-screen h-screen object-fit" src="https://i.gifer.com/Py0.gif" width={3300} height={3300} />
-                    </div>
+                        <Image class="flex w-screen h-screen object-fit" src='/landing.gif' width={3300} height={3300} />
+                    </div> 
                 )}
 
             </div>
